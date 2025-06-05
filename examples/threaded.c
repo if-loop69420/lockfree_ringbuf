@@ -7,7 +7,7 @@
 #include "../ring.h"  // Your rbuf struct + rbuf_write + rbuf_read
 
 #define BUF_SIZE 10*32
-#define NUM_MESSAGES 10
+#define NUM_MESSAGES 1000
 #define MAX_MSG_SIZE 32
 
 rbuf* ring;

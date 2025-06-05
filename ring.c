@@ -38,7 +38,7 @@ int rbuf_write(rbuf* rbuf, void* data, size_t size) {
   memcpy(buf_check_copy, original_buf, original_size);
   memcpy(buf_work_copy, original_buf, original_size);
   
-  _Atomic char* write_ptr_check_copy = rbuf->write_ptr;
+  char* write_ptr_check_copy = atomic_load(rbuf->write_ptr);
   // Translate to write_ptr_work_copy
   size_t offset = (char*)write_ptr_check_copy - (char*)original_buf;
   char* write_ptr_work_copy = buf_work_copy + offset;
